@@ -10,5 +10,25 @@
 	"name": "Better Notifications!",
 	"version": "v1.0.0",
 	"developer": "XblazeGMD",
-	"description": ""
+	"description": "",
+    "settings": {
+        "interval": {
+            "type": "int",
+            "name": "Fetch Interval",
+            "description": "How often to check for new notifications (in seconds)\n\n<cr>Setting the value too low may get you rate limited, be careful!</c>",
+            "default": 120,
+            "min": 60,
+            "max": 300
+        },
+        "notify-while-playing": {
+            "type": "bool",
+            "name": "Notify While Playing",
+            "default": false
+        },
+        "notify-while-on-editor": {
+            "type": "bool",
+            "name": "Notify While on Editor",
+            "default": true
+        }
+    }
 }

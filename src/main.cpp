@@ -51,12 +51,16 @@ protected:
     }
 
     void update(float) {
+        auto mod = Mod::get();
         if (m_nextFetch <= asp::Instant::now()) {
             fetchNotifications();
-            m_nextFetch += asp::Duration::fromSecs(60);
+            m_nextFetch += asp::Duration::fromSecs(mod->getSettingValue<int>("interval"));
         }
 
-        if (PlayLayer::get()) return;
+        if (
+            (mod->getSettingValue<bool>("notify-while-playing") && PlayLayer::get()) ||
+            (mod->getSettingValue<bool>("notify-while-on-editor") && LevelEditorLayer::get())
+        ) return;
 
         if (!m_queue.empty()) {
             for (const auto& notif : m_queue) {
