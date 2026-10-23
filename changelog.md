@@ -1,2 +1,3 @@
-# 1.0.0
-- Edit this file to change your mod's changelog.
+# Better Notifications
+## 1.0.0
+- Initial Release!

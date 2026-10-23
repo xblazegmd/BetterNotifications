@@ -1,3 +1,7 @@
-# Template Mod
+# Better Notifications
+Shows an actual notification when you get an in-game notification
 
-Edit about.md to change this
+The frequency in which it gets checked can be changed in settings
+
+## License
+This mod is licensed under the **MIT License**. More information about it can be found [here](https://choosealicense.com/licenses/mit/)
