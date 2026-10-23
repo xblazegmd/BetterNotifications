@@ -28,7 +28,7 @@ public:
         return nullptr;
     }
 protected:
-    async::TaskHolder<> m_fetchTask;
+    async::TaskHolder<web::WebResponse> m_fetchTask;
     asp::Instant m_nextFetch = asp::Instant::now();
     std::vector<NotificationObject> m_queue;
 
