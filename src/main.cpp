@@ -92,15 +92,14 @@ protected:
             ))
             .timeout(std::chrono::seconds(10));
 
-        async::spawn(
+        m_fetchTask.spawn(
+            "fetchNotifications",
             req.post("https://www.boomlings.com/database/getGJNotifications.php"),
             [this](web::WebResponse res) {
                 if (!res.ok()) {
                     if (res.code() == 429) {
                         log::error("Rate limited by rob's servers");
-                        geode::queueInMainThread([this] {
-                            m_fetchTask.cancel();
-                        });
+                        this->unscheduleUpdate();
                         return;
                     }
                     log::error("Failed to fetch notifications: {}", res.code());
