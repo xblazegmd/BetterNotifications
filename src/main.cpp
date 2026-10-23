@@ -123,6 +123,7 @@ protected:
                 for (const auto& notification : notifications) {
                     auto notif = parseKeyVal(notification);
 
+                    // Field 7 = new notification
                     if (notif["7"] == "1") {
                         auto title = base64::decodeString(notif["4"]);
                         auto desc = base64::decodeString(notif["5"]);
