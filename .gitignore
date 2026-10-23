@@ -65,3 +65,4 @@ build-*/
 
 # Other stuff
 compile_commands.json
+*.af~lock~
