@@ -1,0 +1,14 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2091",
+		"android": "2.2091",
+		"mac": "2.2091",
+		"ios": "2.2091"
+	},
+	"id": "xblazegmd.better-notifications",
+	"name": "Better Notifications!",
+	"version": "v1.0.0",
+	"developer": "XblazeGMD",
+	"description": ""
+}
