@@ -20,12 +20,8 @@ class NotificationManager : public CCNode {
 public:
     static NotificationManager* create() {
         auto ret = new NotificationManager();
-        if (ret->init()) {
-            ret->autorelease();
-            return ret;
-        }
-        delete ret;
-        return nullptr;
+        ret->autorelease();
+        return ret;
     }
 protected:
     async::TaskHolder<web::WebResponse> m_fetchTask;
@@ -44,11 +40,6 @@ protected:
         { "handshake", "particle_302_001.png" },
         { "mail", "particle_207_001.png" }
     };
-
-    bool init() {
-        if (!CCNode::init()) return false;
-        return true;
-    }
 
     void update(float) {
         auto mod = Mod::get();
