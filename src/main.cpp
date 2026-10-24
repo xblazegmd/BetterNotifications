@@ -49,8 +49,8 @@ protected:
         }
 
         if (
-            (mod->getSettingValue<bool>("notify-while-playing") && PlayLayer::get()) ||
-            (mod->getSettingValue<bool>("notify-while-on-editor") && LevelEditorLayer::get())
+            (!mod->getSettingValue<bool>("notify-while-playing") && PlayLayer::get()) ||
+            (!mod->getSettingValue<bool>("notify-while-on-editor") && LevelEditorLayer::get())
         ) return;
 
         if (!m_queue.empty()) {
